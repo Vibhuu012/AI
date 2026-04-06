@@ -1,0 +1,9 @@
+Write a PROLOG program to implement reverse(L, R) where List L is original and List  R is reversed list.
+
+rev([], []).
+rev([H|T], R) :- rev(T, RT), conc(RT, [H], R).
+
+conc([], L, L).
+conc([H|T], L2, [H|R]) :- conc(T, L2, R).
+
+% Query: ?- rev([1,2,3], R).  → R = [3,2,1]
